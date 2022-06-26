@@ -8,7 +8,7 @@ export class CreateClients1656117909773 implements MigrationInterface {
                 columns: [
                     {
                         name: 'id',
-                        type: 'uuid',
+                        type: 'varchar',
                         isPrimary: true,
                     },
                     {

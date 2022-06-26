@@ -8,7 +8,7 @@ export class CreateTechnicians1656170854703 implements MigrationInterface {
                 columns: [
                     {
                         name: 'id',
-                        type: 'uuid',
+                        type: 'varchar',
                         isPrimary: true,
                     },
                     {

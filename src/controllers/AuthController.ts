@@ -12,7 +12,7 @@ export class AuthController {
         const client = await clientRepository.findOne({ where: { email }});
 
         if(!client) {
-            return new Error('Client not exists');
+            return response.status(404).json('Invalid email');
         }
 
         const isValidPassword = await compare(password, client.password);

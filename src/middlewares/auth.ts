@@ -14,13 +14,13 @@ export function AuthMiddleware(request: Request, response: Response, next: NextF
         return response.status(401).json({ error: "Token not provided" });
     }
 
-    const [bearer, token] = authorization.split(" ");
+    const [, token] = authorization.split(" ");
 
     try {
         const decoded = verify(token, process.env.SECRET);
         const { id } = decoded as TokenPayload;
 
-        request.userId = id;
+        request.client.clientId = id;
         next();
     } catch(error) {
         return response.status(401).json({ error: "Invalid Token" });

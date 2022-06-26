@@ -12,7 +12,8 @@ const dataSource = new DataSource({
     username: process.env.TYPEORM_USERNAME,
     password: process.env.TYPEORM_PASSWORD,
     database: process.env.TYPEORM_DATABASE,
-    migrations: [__dirname + '/migrations/*.ts'],
+    migrations: ['src/database/migrations/*.ts'],
+    entities: ['src/entities/*.ts'],
 });
 
 dataSource.initialize()

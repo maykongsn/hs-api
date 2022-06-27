@@ -7,7 +7,7 @@ import { AuthController } from './controllers/AuthController';
 const routes = Router();
 
 routes.post('/client/new', new CreateClientController().handle);
-routes.get('/tickets/new', new CreateClientController().handle);
+routes.get('/tickets/new', new CreateTicketController().handle);
 routes.post('/auth', new AuthController().auth);
 routes.get('/client/tickets', new GetAllClientTicketsController().handle);
 

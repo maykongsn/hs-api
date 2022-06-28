@@ -9,6 +9,6 @@ const routes = Router();
 routes.post('/client/new', new CreateClientController().handle);
 routes.post('/tickets/new', new CreateTicketController().handle);
 routes.post('/auth', new AuthController().auth);
-routes.get('/client/tickets', new GetAllClientTicketsController().handle);
+routes.get('/client/tickets/:clientId', new GetAllClientTicketsController().handle);
 
 export { routes };

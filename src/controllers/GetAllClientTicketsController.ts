@@ -3,8 +3,7 @@ import { GetAllClientTicketsService } from './../services/GetAllClientTicketsSer
 
 export class GetAllClientTicketsController {
     async handle(request: Request, response: Response) {
-        const client_id = request.client.clientId;
-
+        const client_id = request.params.clientId;
         const service = new GetAllClientTicketsService();
         const result = await service.list(client_id);
 

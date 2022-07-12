@@ -1,5 +1,7 @@
-import { Entity, Column, CreateDateColumn, PrimaryColumn } from 'typeorm';
+import { Entity, Column, CreateDateColumn, PrimaryColumn, OneToMany } from 'typeorm';
 import { v4 as uuid } from 'uuid';
+
+import { Ticket } from './Ticket';
 
 @Entity("clients")
 export class Client {
@@ -14,6 +16,9 @@ export class Client {
 
     @Column()
     email: string;
+
+    @OneToMany(() => Ticket, ticket => ticket.client)
+    tickets: Ticket[];
 
     @CreateDateColumn()
     created_at: Date;

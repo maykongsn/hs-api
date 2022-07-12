@@ -14,7 +14,7 @@ export class Ticket {
     @Column()
     client_id: string;
 
-    @ManyToOne(() => Client)
+    @ManyToOne(() => Client, client => client.tickets)
     @JoinColumn({ name: "client_id" })
     client: Client;
 

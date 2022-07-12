@@ -8,7 +8,7 @@ type ClientRequest = {
     email: string;
 }
 
-export class CreateClientService {
+export class ClientService {
     async store({name, password, email}: ClientRequest): Promise<Client | Error> {
         const repository = dataSource.getRepository(Client);
 

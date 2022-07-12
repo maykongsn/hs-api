@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
-import { CreateClientService } from './../services/CreateClientService';
+import { ClientService } from './../services/ClientService';
 
-export class CreateClientController {
-    async handle(request: Request, response: Response) {
+export class ClientController {
+    async handleCreate(request: Request, response: Response) {
         const { name, password, email } = request.body;
 
-        const service = new CreateClientService();
+        const service = new ClientService();
         const result = await service.store({ name, password, email });
 
         if(result instanceof Error) {
